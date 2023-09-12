@@ -24,10 +24,10 @@ function App() {
 
   return (
     <div>
-      <NavBar/>
+      <NavBar user={ user } setUser={ setUser }/>
        <Routes>
         <Route path="/" element={ <Home/> } />
-        <Route path="/login" element={ <Login setUser={setUser}/> } />
+        <Route path="/login" element={ <Login setUser={setUser} /> } />
         <Route path="/singup" element={ <SignUp/> }/>
       </Routes>
     </div>
