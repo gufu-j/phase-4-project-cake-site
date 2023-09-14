@@ -8,8 +8,6 @@ import Home from './Home';
 import Login from './Login';
 import SignUp from './SignUp';
 
-
-
 function App() {
 
   const [user, setUser] = useState(null);
@@ -22,14 +20,21 @@ function App() {
     });
   }, [])
 
+console.log(user)
   return (
     <div>
       <NavBar user={ user } setUser={ setUser }/>
-       <Routes>
-        <Route path="/" element={ <Home/> } />
-        <Route path="/login" element={ <Login setUser={setUser} /> } />
-        <Route path="/singup" element={ <SignUp/> }/>
-      </Routes>
+        {user ? (
+          <Routes>
+            <Route path="/" element={ <Home user={user}/> } />
+          </Routes>
+        ) : (
+          <Routes>
+            <Route path="/login" element={ <Login setUser={setUser} /> } />
+            <Route path="/signup" element={ <SignUp setUser={setUser} /> }/>
+            <Route path="/" element={ <Home/> } />
+        </Routes>
+        )}
     </div>
   );
 }

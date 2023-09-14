@@ -25,8 +25,8 @@ function NavBar({ user, setUser }){
                     <button onClick={handleLogout}> Logout </button>
                  ) : (
                     <>
-                        <Link to= "/signup"> SignUp </Link>
-                        <Link to= "/login"></Link>
+                        <Link to= "/signup"> Sign up </Link>
+                        <Link to= "/login"> Login</Link>
                     </>
                 )}
             </div>
